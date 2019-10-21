@@ -28,10 +28,13 @@ class App extends Component {
     this.setState({ tasks });
   }
   changeActive(id) {
-    let tasks = [...this.state.tasks];
-    tasks.filter((task) => id !== task.id);
+    const tasks = [...this.state.tasks];
 
-    this.setState({})
+    tasks.forEach(task => {
+      if (task.id === id) task.active = false;
+    })
+
+    this.setState({ tasks })
 
 
   }
