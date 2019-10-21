@@ -20,22 +20,25 @@ class App extends Component {
     ]
   }
 
-  deleteTask(id) {
+  deleteTask = (id) => {
     let tasks = [...this.state.tasks];
 
-    tasks.filter((task) => id !== task.id);
+    tasks = tasks.filter(task => id !== task.id);
 
     this.setState({ tasks });
+
   }
-  changeActive(id) {
+  changeActive = (id) => {
     const tasks = [...this.state.tasks];
 
     tasks.forEach(task => {
-      if (task.id === id) task.active = false;
+      if (task.id === id) {
+        task.active = false;
+        task.finishDate = new Date().getTime();
+      }
     })
 
     this.setState({ tasks })
-
 
   }
 
