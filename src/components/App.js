@@ -5,7 +5,7 @@ import AddTask from './AddTask';
 
 
 class App extends Component {
-
+  counter = 9
   state = {
     tasks: [
       { id: 0, text: 'zagrać wreszcie w Wiedźmina 3', date: '2018-02-15', important: true, active: true, finishDate: null },
@@ -42,12 +42,32 @@ class App extends Component {
 
   }
 
+  handleAddTask = (tekst, checked, date) => {
+    const task = {
+      id: this.counter,
+      tekst: tekst,
+      important: checked,
+      date: date,
+      actuve: true,
+      finishDate: null
+    };
+
+    console.log(task)
+    this.counter++
+
+    this.setState(prevState => ({
+      tasks: [...prevState.tasks, task]
+    }))
+    console.log(this.state.tasks)
+    return true
+  }
+
 
   render() {
     return (
       <div className="App">
         <h1>To do app :)</h1>
-        <AddTask />
+        <AddTask addTask={this.handleAddTask} />
         <TaskList tasks={this.state.tasks} delete={this.deleteTask} changeActive={this.changeActive} />
       </div>
     );
