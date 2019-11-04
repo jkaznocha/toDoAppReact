@@ -5,18 +5,12 @@ import AddTask from './AddTask';
 
 
 class App extends Component {
-  counter = 9
+  counter = 2
   state = {
     tasks: [
-      { id: 0, tekst: 'zagrać wreszcie w Wiedźmina 3', date: '2018-02-15', important: true, active: true, finishDate: null },
-      { id: 1, tekst: "zrobić dobry uczynek", date: '2020-11-12', important: false, active: true, finishDate: null },
-      { id: 2, tekst: "pomalować dom po sylwestrze", date: '2019-09-11', important: false, active: true, finishDate: null },
-      { id: 3, tekst: "schudnąć 30 kilogramów", date: '2019-05-20', important: true, active: true, finishDate: null },
-      { id: 4, tekst: "sprzedać butelki po piwie (20 skrzynek)", date: '2020-11-12', important: false, active: true, finishDate: null },
-      { id: 5, tekst: "jeszcze raz pomalować dom", date: '2019-09-11', important: false, active: true, finishDate: null },
-      { id: 6, tekst: "fryzjer!!!", date: '2019-05-20', important: true, active: true, finishDate: null },
-      { id: 7, tekst: "nie odbierać poleconego od komornika", date: '2020-11-12', important: false, active: true, finishDate: null },
-      { id: 8, tekst: "kupić 2 butelki litrowe", date: '2019-09-11', important: false, active: true, finishDate: null },
+      { id: 0, tekst: 'Przykładowe zadanie', date: '2018-02-15', important: false, active: true, finishDate: null },
+      { id: 1, tekst: "Przykładowe pilne zadanie", date: '2020-11-12', important: true, active: true, finishDate: null },
+
     ]
   }
 
@@ -52,7 +46,7 @@ class App extends Component {
       finishDate: null
     };
 
-    console.log(task)
+    //console.log(task)
     this.counter++
 
     // this.setState(prevState => ({

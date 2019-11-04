@@ -32,8 +32,8 @@ const TaskList = (props) => {
       <hr />
       <div className="done">
         <h2>Lista Zadań zrobionych ({done.length})</h2>
-        {done.length > 5 ? <span style={{ fontSize: 10, fontStyle: "italic" }}>Wyświetlonych jest jedynie 5 ostatnich elementów</span> : null}
-        {doneTask.slice(0, 5)}
+        {done.length > 5 ? <span style={{ fontSize: 10, fontStyle: "italic" }}>Brawo wykonałeś już ponad 5 zadań!!</span> : null}
+        {doneTask}
       </div>
     </div>
 

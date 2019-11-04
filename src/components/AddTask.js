@@ -13,22 +13,27 @@ class AddTask extends Component {
   }
 
   handleChange = (e) => {
+
     this.setState({ tekst: e.target.value })
+
   }
 
   handleClick = () => {
-    console.log('dodaje')
+    //console.log('dodaje')
 
     const { tekst, checked, date } = this.state
 
-    const add = this.props.addTask(tekst, checked, date)
-
-    if (add) {
-      this.setState({
-        tekst: '',
-        checked: false,
-        date: this.minDate
-      })
+    if (tekst.length > 0) {
+      const add = this.props.addTask(tekst, checked, date)
+      if (add) {
+        this.setState({
+          tekst: '',
+          checked: false,
+          date: this.minDate
+        })
+      }
+    } else {
+      alert("Wpisz zadanie")
     }
 
   }
